@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galéria - Csíkszentdomokosi Tanuszoda</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            scroll-behavior: smooth;
+        }
+        .container {
+            max-width: 1200px;
+        }
+        /* Ezek a stílusok itt nem szükségesek, de nem ártanak */
+        .price-table { background-color: white; }
+        .price-table th, .price-table td { padding: 1rem; text-align: left; }
+        .price-table thead th { background-color: #1e40af; color: white; font-weight: 700; }
+        .price-table tbody tr:nth-child(even) { background-color: #eff6ff; }
+        .price-table tbody tr:hover { background-color: #dbeafe; }
+        .price-table .price { font-weight: 800; color: #1d4ed8; }
+        .category-header { background-color: #dbeafe; font-weight: 700; font-size: 1.1rem; color: #1e3a8a; }
+    </style>
+</head>
+<body class="pt-16">
+
+    <!-- 1. Navigáció/Header (FIXED) -->
+    <header>
+        <nav class="bg-blue-800 p-4 fixed w-full top-0 z-20 shadow-lg">
+            <div class="container mx-auto flex justify-between items-center">
+                <!-- LOGÓ (MÓDOSÍTVA: a főoldalra, index.html-re mutat) -->
+                 <a href="#" class="text-white text-xl font-bold md:text-2xl flex items-center">
+                    <img 
+                        src="tanuszoda.jpeg" 
+                        alt="Csíkszentdomokosi Tanuszoda Logó" 
+                        class="h-8 md:h-10 rounded-md"
+                    >
+                    <!-- FIGYELEM: Cserélje le a fenti 'src' URL-t a saját logója elérési útjára! -->
+                </a>
+                <!-- Mobilos menü gomb -->
+                <button id="menu-button" class="text-white md:hidden focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+                
+                <!-- Asztali menü (MÓDOSÍTVA: linkek az index.html-re mutatnak) -->
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="index.html#nyitvatartas" class="text-white hover:text-blue-200 transition duration-300 font-semibold lang-hu">Nyitvatartás</a>
+                    <a href="index.html#nyitvatartas" class="text-white hover:text-blue-200 transition duration-300 font-semibold lang-ro hidden">Program</a>
+
+                    <a href="index.html#arak" class="text-white hover:text-blue-200 transition duration-300 font-semibold lang-hu">Árak</a>
+                    <a href="index.html#arak" class="text-white hover:text-blue-200 transition duration-300 font-semibold lang-ro hidden">Prețuri</a>
+
+                    <a href="index.html#rolunk" class="text-white hover:text-blue-200 transition duration-300 font-semibold lang-hu">Szolgáltatások</a>
+                    <a href="index.html#rolunk" class="text-white hover:text-blue-200 transition duration-300 font-semibold lang-ro hidden">Servicii</a>
+
+                    <!-- MÓDOSÍTVA: Ez az aktív oldal, ezért nem link (vagy href="#") -->
+                    <a href="#" class="text-blue-200 transition duration-300 font-bold lang-hu">Galéria</a>
+                    <a href="#" class="text-blue-200 transition duration-300 font-bold lang-ro hidden">Galerie</a>
+
+                    <a href="index.html#kapcsolat" class="text-white hover:text-blue-200 transition duration-300 font-semibold lang-hu">Kapcsolat</a>
+                    <a href="index.html#kapcsolat" class="text-white hover:text-blue-200 transition duration-300 font-semibold lang-ro hidden">Contact</a>
+
+                    <select id="language-switcher" class="bg-blue-700 text-white rounded-md p-1 focus:ring-2 focus:ring-white">
+                        <option value="hu">HU</option>
+                        <option value="ro">RO</option>
+                    </select>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Mobilos menü (kinyíló) (MÓDOSÍTVA: linkek az index.html-re mutatnak) -->
+        <div id="mobile-menu" class="hidden fixed top-16 left-0 w-full bg-blue-700 z-10 shadow-lg md:hidden">
+            <div class="flex flex-col space-y-2 p-4">
+                <a href="index.html#nyitvatartas" class="text-white hover:bg-blue-600 p-2 rounded-md lang-hu">Nyitvatartás</a>
+                <a href="index.html#nyitvatartas" class="text-white hover:bg-blue-600 p-2 rounded-md lang-ro hidden">Program</a>
+
+                <a href="index.html#arak" class="text-white hover:bg-blue-600 p-2 rounded-md lang-hu">Árak</a>
+                <a href="index.html#arak" class="text-white hover:bg-blue-600 p-2 rounded-md lang-ro hidden">Prețuri</a>
+
+                <a href="index.html#rolunk" class="text-white hover:bg-blue-600 p-2 rounded-md lang-hu">Szolgáltatások</a>
+                <a href="index.html#rolunk" class="text-white hover:bg-blue-600 p-2 rounded-md lang-ro hidden">Servicii</a>
+
+                <!-- MÓDOSÍTVA: Ez az aktív oldal -->
+                <a href="#" class="text-blue-200 bg-blue-600 p-2 rounded-md font-bold lang-hu">Galéria</a>
+                <a href="#" class="text-blue-200 bg-blue-600 p-2 rounded-md font-bold lang-ro hidden">Galerie</a>
+
+                <a href="index.html#kapcsolat" class="text-white hover:bg-blue-600 p-2 rounded-md lang-hu">Kapcsolat</a>
+                <a href="index.html#kapcsolat" class="text-white hover:bg-blue-600 p-2 rounded-md lang-ro hidden">Contact</a>
+                
+                <select id="mobile-language-switcher" class="bg-blue-600 text-white rounded-md p-2 focus:ring-2 focus:ring-white mt-4">
+                    <option value="hu">HU</option>
+                    <option value="ro">RO</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        
+        <!-- EZ AZ EGY SZEKCIÓ VAN EZEN AZ OLDALON -->
+        <section id="galeria" class="py-16 md:py-24 bg-gray-900 text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12">
+                    <span class="lang-hu">Galéria</span>
+                    <span class="lang-ro hidden">Galerie</span>
+                </h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <!-- FIGYELEM: Cserélje le a placehold.co linkeket a saját képeinek URL-jére! -->
+					<div class="rounded-lg overflow-hidden shadow-lg"><img src="Tanuszoda.jpg" alt="Uszoda 8" class="w-full h-auto hover:scale-105 transition-transform duration-300"></div>
+                    <div class="rounded-lg overflow-hidden shadow-lg"><img src="Medenceter.jpg" alt="Uszoda 1" class="w-full h-auto hover:scale-105 transition-transform duration-300"></div>
+                    <div class="rounded-lg overflow-hidden shadow-lg"><img src="Medenceter1.jpg" alt="Uszoda 2" class="w-full h-auto hover:scale-105 transition-transform duration-300"></div>
+                    <div class="rounded-lg overflow-hidden shadow-lg"><img src="minibararak.jpeg" alt="Uszoda 3" class="w-full h-auto hover:scale-105 transition-transform duration-300"></div>
+                    
+                    <div class="rounded-lg overflow-hidden shadow-lg"><img src="Masszazs.jpg" alt="Uszoda 6" class="w-full h-auto hover:scale-105 transition-transform duration-300"></div>
+                    <div class="rounded-lg overflow-hidden shadow-lg"><img src="Oltozok.jpg" alt="Uszoda 7" class="w-full h-auto hover:scale-105 transition-transform duration-300"></div>
+                    <div class="rounded-lg overflow-hidden shadow-lg"><img src="Recepcio.jpg" alt="Uszoda 8" class="w-full h-auto hover:scale-105 transition-transform duration-300"></div>
+					
+					<div class="rounded-lg overflow-hidden shadow-lg"><img src="Szauna1.jpg" alt="Uszoda 4" class="w-full h-auto hover:scale-105 transition-transform duration-300"></div>
+                    <div class="rounded-lg overflow-hidden shadow-lg"><img src="Szauna2.jpg" alt="Uszoda 5" class="w-full h-auto hover:scale-105 transition-transform duration-300"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- A TÖBBI SZEKCIÓ (Hero, Nyitvatartás, Rolunk, Árak, Kapcsolat) TÖRÖLVE INNEN -->
+
+    </main>
+
+    <!-- 7. Footer (ugyanaz, mint a főoldalon) -->
+    <footer class="bg-gray-800 text-white p-6 text-center">
+        <div class="container mx-auto">
+            <p class="text-sm">&copy; 2025 Minden jog fenntartva. Csíkszentdomokosi Tanuszoda.</p>
+            <div class="mt-2 space-x-4">
+                <a href="https://www.facebook.com/profile.php?id=100092718712285" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300">Kövessen minket Facebookon!</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Nyelvváltó logika
+        const langSwitcher = document.getElementById('language-switcher');
+        const mobileLangSwitcher = document.getElementById('mobile-language-switcher');
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function setLanguage(lang) {
+            // Elrejti az összes nyelvi elemet
+            document.querySelectorAll('[class*="lang-"]').forEach(el => {
+                el.classList.add('hidden');
+            });
+            // Megjeleníti a kiválasztott nyelv elemeit
+            document.querySelectorAll(`.lang-${lang}`).forEach(el => {
+                el.classList.remove('hidden');
+            });
+            // Szinkronizálja a két választót
+            langSwitcher.value = lang;
+            mobileLangSwitcher.value = lang;
+            // Elmenti a választást
+            localStorage.setItem('websiteLang', lang);
+        }
+
+        // Kezdeti nyelv beállítása (mentésből vagy alapértelmezett)
+        let currentLang = localStorage.getItem('websiteLang') || 'hu';
+        setLanguage(currentLang);
+
+        // Nyelvváltás eseménykezelője
+        langSwitcher.addEventListener('change', (e) => setLanguage(e.target.value));
+        mobileLangSwitcher.addEventListener('change', (e) => setLanguage(e.target.value));
+        
+        // Mobilos menü váltása
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Menü elrejtése navigáció után mobilon
+        document.querySelectorAll('#mobile-menu a').forEach(item => {
+            item.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
