@@ -254,8 +254,8 @@
                             <span class="lang-ro hidden">Cursuri de înot pentru copii</span>
                         </h3>
                         <p class="text-gray-600">
-                            <span class="lang-hu">Kezdő és haladó csoportok a legkisebbeknek.</span>
-                            <span class="lang-ro hidden">Grupe pentru începători și avansați.</span>
+                            <span class="lang-hu">Kezdő és haladó csoportok vagy személyreszabott egyéni órák.</span>
+                            <span class="lang-ro hidden">Grupuri pentru începători și avansați sau lecții individuale personalizate.</span>
                         </p>
                     </div>
                     
@@ -355,7 +355,7 @@
             </div>
         </section>
 
-        <!-- Árak Szekció -->
+               <!-- Árak Szekció -->
         <section id="arak" class="py-16 md:py-24">
             <div class="container mx-auto px-4 max-w-5xl text-center">
                 <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-12">
@@ -363,15 +363,15 @@
                     <span class="lang-ro hidden">Bilete și Abonamente</span>
                 </h2>
                 <div class="shadow-xl rounded-lg overflow-hidden border border-gray-200">
-                    <div class="overflow-visible">
-                        <table class="price-table">
+                    <div class="overflow-x-auto">
+                        <table class="w-full price-table min-w-[600px]">
                             <thead>
                                 <tr>
                                     <th class="w-1/2">
                                         <span class="lang-hu">Szolgáltatás</span>
                                         <span class="lang-ro hidden">Serviciu</span>
                                     </th>
-                                    <th class="w-1/4">
+                                    <th class="w-1/4 whitespace-nowrap">
                                         <span class="lang-hu">Ár</span>
                                         <span class="lang-ro hidden">Preț</span>
                                     </th>
@@ -406,6 +406,14 @@
                                 </tr>
                                 <tr>
                                     <td>
+                                        <span class="lang-hu">Szauna</span>
+                                        <span class="lang-ro hidden">Saună</span>
+                                    </td>
+                                    <td class="price">10 RON</td>
+                                    <td class="hidden md:table-cell"></td>
+                                </tr>
+                                <tr>
+                                    <td>
                                         <span class="lang-hu">Gyerek belépő 0–3 éves korig</span>
                                         <span class="lang-ro hidden">Acces copii 0-3 ani</span>
                                     </td>
@@ -419,6 +427,7 @@
                                     </td>
                                 </tr>
                                 
+                                <!-- Gyerek kategória -->
                                 <tr class="category-header">
                                     <td colspan="3">
                                         <span class="lang-hu">Gyerekek (3-18 év), diákok, hallgatók</span>
@@ -455,7 +464,7 @@
                                         <span class="lang-ro hidden">Abonament copil (10 ore)</span>
                                     </td>
                                     <td class="price">100 RON / 10 óra</td>
-                                    <td class="hidden md:table-cell"></td>
+                                    <td class="hidden md:table-cell"><span class="text-sm text-gray-500">30 napig érvényes / valabil 30 de zile</span></td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -463,9 +472,10 @@
                                         <span class="lang-ro hidden">Abonament copil (20 ore)</span>
                                     </td>
                                     <td class="price">200 RON / 20 óra</td>
-                                    <td class="hidden md:table-cell"></td>
+                                    <td class="hidden md:table-cell"><span class="text-sm text-gray-500">30 napig érvényes / valabil 30 de zile</span></td>
                                 </tr>
 
+                                <!-- Felnőtt kategória -->
                                 <tr class="category-header">
                                     <td colspan="3">
                                         <span class="lang-hu">Felnőttek</span>
@@ -502,7 +512,7 @@
                                         <span class="lang-ro hidden">Abonament adult (10 ore)</span>
                                     </td>
                                     <td class="price">150 RON / 10 óra</td>
-                                    <td class="hidden md:table-cell"><span class="text-sm text-gray-500">30 nap / zile</span></td>
+                                    <td class="hidden md:table-cell"><span class="text-sm text-gray-500">30 napig érvényes / valabil 30 de zile</span></td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -510,9 +520,10 @@
                                         <span class="lang-ro hidden">Abonament adult (20 ore)</span>
                                     </td>
                                     <td class="price">300 RON / 20 óra</td>
-                                    <td class="hidden md:table-cell"><span class="text-sm text-gray-500">30 nap / zile</span></td>
+                                    <td class="hidden md:table-cell"><span class="text-sm text-gray-500">30 napig érvényes / valabil 30 de zile</span></td>
                                 </tr>
                                 
+                                <!-- Nyugdíjas kategória -->
                                 <tr class="category-header">
                                     <td colspan="3">
                                         <span class="lang-hu">Nyugdíjasok</span>
@@ -549,6 +560,86 @@
                                         <span class="lang-ro hidden">Abonament pensionar (10 ore)</span>
                                     </td>
                                     <td class="price">100 RON / 10 óra</td>
+                                    <td class="hidden md:table-cell"><span class="text-sm text-gray-500">30 napig érvényes / valabil 30 de zile</span></td>
+                                </tr>
+
+                                <!-- ÚJ SZOLGÁLTATÁSOK SZEKCIÓ -->
+                                <tr class="category-header">
+                                    <td colspan="3">
+                                        <span class="lang-hu">Szolgáltatások</span>
+                                        <span class="lang-ro hidden">Servicii</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="lang-hu">Úszásoktatás (Csoportos - 8 alkalom)</span>
+                                        <span class="lang-ro hidden">Cursuri de înot (Grup - 8 ședințe)</span>
+                                    </td>
+                                    <td class="price">310 RON</td>
+                                    <td class="hidden md:table-cell"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="lang-hu">Úszásoktatás (Egyéni - 60 perc)</span>
+                                        <span class="lang-ro hidden">Cursuri de înot (Individual - 60 min)</span>
+                                    </td>
+                                    <td class="price">90 RON</td>
+                                    <td class="hidden md:table-cell"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="lang-hu">Úszásoktatás ( 2 fő - 60 perc)</span>
+                                        <span class="lang-ro hidden">Cursuri de înot ( 2 pers - 60 min)</span>
+                                    </td>
+                                    <td class="price">140 RON</td>
+                                    <td class="hidden md:table-cell"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="lang-hu">Aqua Fitness (5 alkalom)</span>
+                                        <span class="lang-ro hidden">Aqua Fitness (Abonament 5 ședințe)</span>
+                                    </td>
+                                    <td class="price">175 RON</td>
+                                    <td class="hidden md:table-cell"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="lang-hu">Vízi gyógytorna (1 fő - 40 perc)</span>
+                                        <span class="lang-ro hidden">Gimnastică medicală în apă (1 pers - 40 min)</span>
+                                    </td>
+                                    <td class="price">70 RON</td>
+                                    <td class="hidden md:table-cell"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="lang-hu">Vízi gyógytorna (2 fő - 40 perc)</span>
+                                        <span class="lang-ro hidden">Gimnastică medicală în apă (2 pers - 40 min)</span>
+                                    </td>
+                                    <td class="price">120 RON</td>
+                                    <td class="hidden md:table-cell"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="lang-hu">Relaxációs masszázs (55 perc)</span>
+                                        <span class="lang-ro hidden">Masaj de relaxare (55 min)</span>
+                                    </td>
+                                    <td class="price">90 RON</td>
+                                    <td class="hidden md:table-cell"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="lang-hu">Hát masszázs (30 perc)</span>
+                                        <span class="lang-ro hidden">Masaj spate (30 min)</span>
+                                    </td>
+                                    <td class="price">70 RON</td>
+                                    <td class="hidden md:table-cell"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="lang-hu">Köpöly masszázs (50 perc)</span>
+                                        <span class="lang-ro hidden">Masaj vacuum (50 min)</span>
+                                    </td>
+                                    <td class="price">90 RON</td>
                                     <td class="hidden md:table-cell"></td>
                                 </tr>
                             </tbody>
