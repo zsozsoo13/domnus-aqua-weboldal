@@ -308,24 +308,22 @@
 
         <!-- 6. Árak Szekció -->
       
-         <section id="arak" class="py-16 md:py-24">
+<section id="arak" class="py-16 md:py-24">
             <div class="container mx-auto px-4 max-w-5xl text-center">
                 <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-12">
                     <span class="lang-hu">Jegyárak és Bérletek</span>
                     <span class="lang-ro hidden">Bilete și Abonamente</span>
                 </h2>
                 <div class="shadow-xl rounded-lg overflow-hidden border border-gray-200">
-                    <div class="overflow-x-auto">
-                        <!-- JAVÍTVA: min-w-full, hogy mobilon oldalra görgethető legyen, de az árak egyben maradjanak -->
-                        <table class="w-full price-table min-w-[600px]">
+                    <div class="overflow-x-auto md:overflow-visible">
+                        <table class="price-table">
                             <thead>
                                 <tr>
                                     <th class="w-1/2">
                                         <span class="lang-hu">Szolgáltatás</span>
                                         <span class="lang-ro hidden">Serviciu</span>
                                     </th>
-                                    <!-- A whitespace-nowrap itt is segít, bár itt rövid a szöveg -->
-                                    <th class="w-1/4 whitespace-nowrap">
+                                    <th class="w-1/4">
                                         <span class="lang-hu">Ár</span>
                                         <span class="lang-ro hidden">Preț</span>
                                     </th>
@@ -373,7 +371,6 @@
                                     </td>
                                 </tr>
                                 
-                                <!-- Gyerek kategória -->
                                 <tr class="category-header">
                                     <td colspan="3">
                                         <span class="lang-hu">Gyerekek (3-18 év), diákok, hallgatók</span>
@@ -421,7 +418,6 @@
                                     <td class="hidden md:table-cell"></td>
                                 </tr>
 
-                                <!-- Felnőtt kategória -->
                                 <tr class="category-header">
                                     <td colspan="3">
                                         <span class="lang-hu">Felnőttek</span>
@@ -469,7 +465,6 @@
                                     <td class="hidden md:table-cell"><span class="text-sm text-gray-500">30 nap / zile</span></td>
                                 </tr>
                                 
-                                <!-- Nyugdíjas kategória -->
                                 <tr class="category-header">
                                     <td colspan="3">
                                         <span class="lang-hu">Nyugdíjasok</span>
