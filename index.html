@@ -60,7 +60,8 @@
                         src="tanuszoda.jpeg" 
                         alt="Csíkszentdomokosi Tanuszoda Logó" 
                         class="h-8 md:h-10 rounded-md"
-                    >
+					<a href="https://zsozsoo13.github.io/domnus-aqua-weboldal/index.html#nyitvatartas"> <a href>
+                    
                     <!-- FIGYELEM: Cserélje le a fenti 'src' URL-t a saját logója elérési útjára! -->
                 </a>
                 
@@ -307,364 +308,213 @@
 
         <!-- 6. Árak Szekció -->
       
-        <section id="arak" class="py-16 md:py-24">
-            <div class="container mx-auto px-6 max-w-5xl text-center">
+         <section id="arak" class="py-16 md:py-24">
+            <div class="container mx-auto px-4 max-w-5xl text-center">
                 <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-12">
                     <span class="lang-hu">Jegyárak és Bérletek</span>
                     <span class="lang-ro hidden">Bilete și Abonamente</span>
                 </h2>
-                <div class="shadow-xl rounded-lg overflow-x-auto">
-                    <table class="w-full price-table">
-                        <thead>
-                            <tr>
-                                <th>
-                                    <span class="lang-hu">Szolgáltatás</span>
-                                    <span class="lang-ro hidden">Serviciu</span>
-                                </th>
-                                <th>
-                                    <span class="lang-hu">Ár</span>
-                                    <span class="lang-ro hidden">Preț</span>
-                                </th>
-                                <th class="hidden md:table-cell">
-                                    <span class="lang-hu">Megjegyzés</span>
-                                    <span class="lang-ro hidden">Observații</span>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="category-header">
-                                <td colspan="3">
-                                    <span class="lang-hu">Általános</span>
-                                    <span class="lang-ro hidden">General</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span class="lang-hu">Úszó sáv bérlés</span>
-                                    <span class="lang-ro hidden">Închiriere culoar de înot</span>
-                                </td>
-                                <td class="price">
-                                    <span class="lang-hu">90 RON / 1 óra</span>
-                                    <span class="lang-ro hidden">90 RON / 1 oră</span>
-                                </td>
-                                <td class="hidden md:table-cell"></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span class="lang-hu">Medencetér látogatás</span>
-                                    <span class="lang-ro hidden">Vizitare bazin</span>
-                                </td>
-                                <td class="price">5 RON</td>
-                                <td class="hidden md:table-cell"></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span class="lang-hu">Gyerek belépő 0–3 éves korig</span>
-                                    <span class="lang-ro hidden">Acces copii 0-3 ani</span>
-                                </td>
-                                <td class="price">
-                                    <span class="lang-hu">Ingyenes</span>
-                                    <span class="lang-ro hidden">Gratuit</span>
-                                </td>
-                                <td class="hidden md:table-cell">
-                                    <span class="lang-hu">(szülő jelenléte kötelező)</span>
-                                    <span class="lang-ro hidden">(prezența părinților obligatorie)</span>
-                                </td>
-                            </tr>
-                            <tr class="category-header">
-                                <td colspan="3">
-                                    <span class="lang-hu">Gyerekek (3-18 év), diákok, hallgatók</span>
-                                    <span class="lang-ro hidden">Copii (3-18 ani), elevi, studenți</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span class="lang-hu">Gyerek jegy (1 óra)</span>
-                                    <span class="lang-ro hidden">Bilet copil (1 oră)</span>
-                                </td>
-                                <td class="price">
-                                    <span class="lang-hu">13 RON / 1 óra</span>
-                                    <span class="lang-ro hidden">13 RON / 1 oră</span>
-                                </td>
-                                <td class="hidden md:table-cell"></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span class="lang-hu">Gyerek jegy (2 óra)</span>
-                                    <span class="lang-ro hidden">Bilet copil (2 ore)</span>
-                                </td>
-                                <td class="price">
-                                    <span class="lang-hu">25 RON / 2 óra</span>
-                                    <span class="lang-ro hidden">25 RON / 2 ore</span>
-                                </td>
-                                <td class="hidden md:table-cell"></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span class="lang-hu">Gyerek jegy (3 óra)</span>
-                                    <span class="lang-ro hidden">Bilet copil (3 ore)</span>
-                                </td>
-                                <td class="price">
-                                    <span class="lang-hu">30 RON / 3 óra</span>
-                                    <span class="lang-ro hidden">30 RON / 3 ore</span>
-                                </td>
-                                <td class="hidden md:table-cell"></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span class="lang-hu">Gyerek bérlet (10 óra)</span>
-                                    <span class="lang-ro hidden">Abonament copil (10 ore)</span>
-                                </td>
-                                <td class="price">
-                                    <span class="lang-hu">100 RON / 10 óra</span>
-                                    <span class="lang-ro hidden">100 RON / 10 ore</span>
-                                </td>
-                                <td class="hidden md:table-cell"></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span class="lang-hu">Gyerek bérlet (20 óra)</span>
-                                    <span class="lang-ro hidden">Abonament copil (20 ore)</span>
-                                </td>
-                                <td class="price">
-                                    <span class="lang-hu">200 RON / 20 óra</span>
-                                    <span class="lang-ro hidden">200 RON / 20 ore</span>
-                                </td>
-                                <td class="hidden md:table-cell"></td>
-                            </tr>
-                            <tr class="category-header">
-                                <td colspan="3">
-                                    <span class="lang-hu">Felnőttek</span>
-                                    <span class="lang-ro hidden">Adulți</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span class="lang-hu">Felnőtt jegy (1 óra)</span>
-                                    <span class="lang-ro hidden">Bilet adult (1 oră)</span>
-                                </td>
-                                <td class="price">
-                                    <span class="lang-hu">18 RON / 1 óra</span>
-                                    <span class="lang-ro hidden">18 RON / 1 oră</span>
-                                </td>
-                                <td class="hidden md:table-cell"></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span class="lang-hu">Felnőtt jegy (2 óra)</span>
-                                    <span class="lang-ro hidden">Bilet adult (2 ore)</span>
-                                </td>
-                                <td class="price">
-                                    <span class="lang-hu">30 RON / 2 óra</span>
-                                    <span class="lang-ro hidden">30 RON / 2 ore</span>
-                                </td>
-                                <td class="hidden md:table-cell"></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span class="lang-hu">Felnőtt jegy (3 óra)</span>
-                                    <span class="lang-ro hidden">Bilet adult (3 ore)</span>
-                                </td>
-                                <td class="price">
-                                    <span class="lang-hu">40 RON / 3 óra</span>
-                                    <span class="lang-ro hidden">40 RON / 3 ore</span>
-                                </td>
-                                <td class="hidden md:table-cell"></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span class="lang-hu">Felnőtt bérlet (10 óra)</span>
-                                    <span class="lang-ro hidden">Abonament adult (10 ore)</span>
-                                </td>
-                                <td class="price">
-                                    <span class="lang-hu">150 RON / 10 óra</span>
-                                    <span class="lang-ro hidden">150 RON / 10 ore</span>
-                                </td>
-                                <td class="hidden md:table-cell">
-                                    <span class="lang-hu">30 napig érvényes</span>
-                                    <span class="lang-ro hidden">Valabil 30 de zile</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span class="lang-hu">Felnőtt bérlet (20 óra)</span>
-                                    <span class="lang-ro hidden">Abonament adult (20 ore)</span>
-                                </td>
-                                <td class="price">
-                                    <span class="lang-hu">300 RON / 20 óra</span>
-                                    <span class="lang-ro hidden">300 RON / 20 ore</span>
-                                </td>
-                                <td class="hidden md:table-cell">
-                                    <span class="lang-hu">30 napig érvényes</span>
-                                    <span class="lang-ro hidden">Valabil 30 de zile</span>
-                                </td>
-                            </tr>
-                            <tr class="category-header">
-                                <td colspan="3">
-                                    <span class="lang-hu">Nyugdíjasok</span>
-                                    <span class="lang-ro hidden">Pensionari</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span class="lang-hu">Nyugdíjas jegy (1 óra)</span>
-                                    <span class="lang-ro hidden">Bilet pensionar (1 oră)</span>
-                                </td>
-                                <td class="price">
-                                    <span class="lang-hu">15 RON / 1 óra</span>
-                                    <span class="lang-ro hidden">15 RON / 1 oră</span>
-                                </td>
-                                <td class="hidden md:table-cell"></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span class="lang-hu">Nyugdíjas jegy (2 óra)</span>
-                                    <span class="lang-ro hidden">Bilet pensionar (2 ore)</span>
-                                </td>
-                                <td class="price">
-                                    <span class="lang-hu">25 RON / 2 óra</span>
-                                    <span class="lang-ro hidden">25 RON / 2 ore</span>
-                                </td>
-                                <td class="hidden md:table-cell"></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span class="lang-hu">Nyugdíjas jegy (3 óra)</span>
-                                    <span class="lang-ro hidden">Bilet pensionar (3 ore)</span>
-                                </td>
-                                <td class="price">
-                                    <span class="lang-hu">30 RON / 3 óra</span>
-                                    <span class="lang-ro hidden">30 RON / 3 ore</span>
-                                </td>
-                                <td class="hidden md:table-cell"></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span class="lang-hu">Nyugdíjas bérlet (10 óra)</span>
-                                    <span class="lang-ro hidden">Abonament pensionar (10 ore)</span>
-                                </td>
-                                <td class="price">
-                                    <span class="lang-hu">100 RON / 10 óra</span>
-                                    <span class="lang-ro hidden">100 RON / 10 ore</span>
-                                </td>
-                                <td class="hidden md:table-cell">
-                                    <span class="lang-hu">30 napig érvényes</span>
-                                    <span class="lang-ro hidden">Valabil 30 de zile</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span class="lang-hu">Nyugdíjas bérlet (20 óra)</span>
-                                    <span class="lang-ro hidden">Abonament pensionar (20 ore)</span>
-                                </td>
-                                <td class="price">
-                                    <span class="lang-hu">250 RON / 20 óra</span>
-                                    <span class="lang-ro hidden">250 RON / 20 ore</span>
-                                </td>
-                                <td class="hidden md:table-cell">
-                                    <span class="lang-hu">30 napig érvényes</span>
-                                    <span class="lang-ro hidden">Valabil 30 de zile</span>
-                                </td>
-                            </tr>
-                            <tr class="category-header">
-                                <td colspan="3">
-                                    <span class="lang-hu">Sportolók</span>
-                                    <span class="lang-ro hidden">Sportivi</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span class="lang-hu">Sportolói bérlet</span>
-                                    <span class="lang-ro hidden">Abonament sportivi</span>
-                                </td>
-                                <td class="price">
-                                    <span class="lang-hu">480 RON / 40 óra</span>
-                                    <span class="lang-ro hidden">480 RON / 40 ore</span>
-                                </td>
-                                <td class="hidden md:table-cell">
-                                    <span class="lang-hu">90 napig érvényes</span>
-                                    <span class="lang-ro hidden">Valabil 90 de zile</span>
-                                </td>
-                            </tr>
-                            <tr class="category-header">
-                                <td colspan="3">
-                                    <span class="lang-hu">Családi és Csoportos</span>
-                                    <span class="lang-ro hidden">Familie și Grupuri</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span class="lang-hu">Családi jegy (2 felnőtt + 2 gyerek)</span>
-                                    <span class="lang-ro hidden">Bilet familie (2 adulți + 2 copii)</span>
-                                </td>
-                                <td class="price">
-                                    <span class="lang-hu">90 RON / 2 óra</span>
-                                    <span class="lang-ro hidden">90 RON / 2 ore</span>
-                                </td>
-                                <td class="hidden md:table-cell"></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span class="lang-hu">Szervezett iskolai csoportok</span>
-                                    <span class="lang-ro hidden">Grupuri școlare organizate</span>
-                                </td>
-                                <td class="price">
-                                    <span class="lang-hu">15 RON / 2 óra / fő</span>
-                                    <span class="lang-ro hidden">15 RON / 2 ore / pers.</span>
-                                </td>
-                                <td class="hidden md:table-cell">
-                                    <span class="lang-hu">min. 15 fő</span>
-                                    <span class="lang-ro hidden">min. 15 pers.</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span class="lang-hu">Mozgássérült jegy</span>
-                                    <span class="lang-ro hidden">Bilet persoane cu dizabilități</span>
-                                </td>
-                                <td class="price">
-                                    <span class="lang-hu">Ingyenes</span>
-                                    <span class="lang-ro hidden">Gratuit</span>
-                                </td>
-                                <td class="hidden md:table-cell">
-                                    <span class="lang-hu">(kísérő kedvezményes)</span>
-                                    <span class="lang-ro hidden">(însoțitor cu reducere)</span>
-                                </td>
-                            </tr>
-                            <tr class="category-header">
-                                <td colspan="3">
-                                    <span class="lang-hu">Egyéb</span>
-                                    <span class="lang-ro hidden">Altele</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span class="lang-hu">Medencetér bérleti díj (rendezvényekre)</span>
-                                    <span class="lang-ro hidden">Închiriere bazin (evenimente)</span>
-                                </td>
-                                <td class="price">
-                                    <span class="lang-hu">600 RON / 1 óra</span>
-                                    <span class="lang-ro hidden">600 RON / 1 oră</span>
-                                </td>
-                                <td class="hidden md:table-cell">
-                                    <span class="lang-hu">(egyeztetés szükséges)</span>
-                                    <span class="lang-ro hidden">(necesită programare)</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span class="lang-hu">Szauna használat</span>
-                                    <span class="lang-ro hidden">Acces saună</span>
-                                </td>
-                                <td class="price">10 RON</td>
-                                <td class="hidden md:table-cell"></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="shadow-xl rounded-lg overflow-hidden border border-gray-200">
+                    <div class="overflow-x-auto">
+                        <!-- JAVÍTVA: min-w-full, hogy mobilon oldalra görgethető legyen, de az árak egyben maradjanak -->
+                        <table class="w-full price-table min-w-[600px]">
+                            <thead>
+                                <tr>
+                                    <th class="w-1/2">
+                                        <span class="lang-hu">Szolgáltatás</span>
+                                        <span class="lang-ro hidden">Serviciu</span>
+                                    </th>
+                                    <!-- A whitespace-nowrap itt is segít, bár itt rövid a szöveg -->
+                                    <th class="w-1/4 whitespace-nowrap">
+                                        <span class="lang-hu">Ár</span>
+                                        <span class="lang-ro hidden">Preț</span>
+                                    </th>
+                                    <th class="hidden md:table-cell w-1/4">
+                                        <span class="lang-hu">Megjegyzés</span>
+                                        <span class="lang-ro hidden">Observații</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="category-header">
+                                    <td colspan="3">
+                                        <span class="lang-hu">Általános</span>
+                                        <span class="lang-ro hidden">General</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="lang-hu">Úszó sáv bérlés</span>
+                                        <span class="lang-ro hidden">Închiriere culoar de înot</span>
+                                    </td>
+                                    <td class="price">90 RON / 1 óra</td>
+                                    <td class="hidden md:table-cell"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="lang-hu">Medencetér látogatás</span>
+                                        <span class="lang-ro hidden">Vizitare bazin</span>
+                                    </td>
+                                    <td class="price">5 RON</td>
+                                    <td class="hidden md:table-cell"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="lang-hu">Gyerek belépő 0–3 éves korig</span>
+                                        <span class="lang-ro hidden">Acces copii 0-3 ani</span>
+                                    </td>
+                                    <td class="price">
+                                        <span class="lang-hu">Ingyenes</span>
+                                        <span class="lang-ro hidden">Gratuit</span>
+                                    </td>
+                                    <td class="hidden md:table-cell">
+                                        <span class="lang-hu">(szülő jelenléte kötelező)</span>
+                                        <span class="lang-ro hidden">(prezența părinților obligatorie)</span>
+                                    </td>
+                                </tr>
+                                
+                                <!-- Gyerek kategória -->
+                                <tr class="category-header">
+                                    <td colspan="3">
+                                        <span class="lang-hu">Gyerekek (3-18 év), diákok, hallgatók</span>
+                                        <span class="lang-ro hidden">Copii (3-18 ani), elevi, studenți</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="lang-hu">Gyerek jegy (1 óra)</span>
+                                        <span class="lang-ro hidden">Bilet copil (1 oră)</span>
+                                    </td>
+                                    <td class="price">13 RON / 1 óra</td>
+                                    <td class="hidden md:table-cell"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="lang-hu">Gyerek jegy (2 óra)</span>
+                                        <span class="lang-ro hidden">Bilet copil (2 ore)</span>
+                                    </td>
+                                    <td class="price">25 RON / 2 óra</td>
+                                    <td class="hidden md:table-cell"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="lang-hu">Gyerek jegy (3 óra)</span>
+                                        <span class="lang-ro hidden">Bilet copil (3 ore)</span>
+                                    </td>
+                                    <td class="price">30 RON / 3 óra</td>
+                                    <td class="hidden md:table-cell"></td>
+                                </tr>
+                                 <tr>
+                                    <td>
+                                        <span class="lang-hu">Gyerek bérlet (10 óra)</span>
+                                        <span class="lang-ro hidden">Abonament copil (10 ore)</span>
+                                    </td>
+                                    <td class="price">100 RON / 10 óra</td>
+                                    <td class="hidden md:table-cell"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="lang-hu">Gyerek bérlet (20 óra)</span>
+                                        <span class="lang-ro hidden">Abonament copil (20 ore)</span>
+                                    </td>
+                                    <td class="price">200 RON / 20 óra</td>
+                                    <td class="hidden md:table-cell"></td>
+                                </tr>
+
+                                <!-- Felnőtt kategória -->
+                                <tr class="category-header">
+                                    <td colspan="3">
+                                        <span class="lang-hu">Felnőttek</span>
+                                        <span class="lang-ro hidden">Adulți</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="lang-hu">Felnőtt jegy (1 óra)</span>
+                                        <span class="lang-ro hidden">Bilet adult (1 oră)</span>
+                                    </td>
+                                    <td class="price">18 RON / 1 óra</td>
+                                    <td class="hidden md:table-cell"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="lang-hu">Felnőtt jegy (2 óra)</span>
+                                        <span class="lang-ro hidden">Bilet adult (2 ore)</span>
+                                    </td>
+                                    <td class="price">30 RON / 2 óra</td>
+                                    <td class="hidden md:table-cell"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="lang-hu">Felnőtt jegy (3 óra)</span>
+                                        <span class="lang-ro hidden">Bilet adult (3 ore)</span>
+                                    </td>
+                                    <td class="price">40 RON / 3 óra</td>
+                                    <td class="hidden md:table-cell"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="lang-hu">Felnőtt bérlet (10 óra)</span>
+                                        <span class="lang-ro hidden">Abonament adult (10 ore)</span>
+                                    </td>
+                                    <td class="price">150 RON / 10 óra</td>
+                                    <td class="hidden md:table-cell"><span class="text-sm text-gray-500">30 nap / zile</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="lang-hu">Felnőtt bérlet (20 óra)</span>
+                                        <span class="lang-ro hidden">Abonament adult (20 ore)</span>
+                                    </td>
+                                    <td class="price">300 RON / 20 óra</td>
+                                    <td class="hidden md:table-cell"><span class="text-sm text-gray-500">30 nap / zile</span></td>
+                                </tr>
+                                
+                                <!-- Nyugdíjas kategória -->
+                                <tr class="category-header">
+                                    <td colspan="3">
+                                        <span class="lang-hu">Nyugdíjasok</span>
+                                        <span class="lang-ro hidden">Pensionari</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="lang-hu">Nyugdíjas jegy (1 óra)</span>
+                                        <span class="lang-ro hidden">Bilet pensionar (1 oră)</span>
+                                    </td>
+                                    <td class="price">15 RON / 1 óra</td>
+                                    <td class="hidden md:table-cell"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="lang-hu">Nyugdíjas jegy (2 óra)</span>
+                                        <span class="lang-ro hidden">Bilet pensionar (2 ore)</span>
+                                    </td>
+                                    <td class="price">25 RON / 2 óra</td>
+                                    <td class="hidden md:table-cell"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="lang-hu">Nyugdíjas jegy (3 óra)</span>
+                                        <span class="lang-ro hidden">Bilet pensionar (3 ore)</span>
+                                    </td>
+                                    <td class="price">30 RON / 3 óra</td>
+                                    <td class="hidden md:table-cell"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="lang-hu">Nyugdíjas bérlet (10 óra)</span>
+                                        <span class="lang-ro hidden">Abonament pensionar (10 ore)</span>
+                                    </td>
+                                    <td class="price">100 RON / 10 óra</td>
+                                    <td class="hidden md:table-cell"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </section>
-```
+    </main>
 
  <section id="kapcsolat" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-6 max-w-4xl text-center">
