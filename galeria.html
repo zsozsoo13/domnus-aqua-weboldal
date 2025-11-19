@@ -16,14 +16,10 @@
         .container {
             max-width: 1200px;
         }
-        /* Ezek a stílusok itt nem szükségesek, de nem ártanak */
-        .price-table { background-color: white; }
-        .price-table th, .price-table td { padding: 1rem; text-align: left; }
-        .price-table thead th { background-color: #1e40af; color: white; font-weight: 700; }
-        .price-table tbody tr:nth-child(even) { background-color: #eff6ff; }
-        .price-table tbody tr:hover { background-color: #dbeafe; }
-        .price-table .price { font-weight: 800; color: #1d4ed8; }
-        .category-header { background-color: #dbeafe; font-weight: 700; font-size: 1.1rem; color: #1e3a8a; }
+        /* Modal animáció */
+        #image-modal {
+            transition: opacity 0.3s ease;
+        }
     </style>
 </head>
 <body class="pt-16">
@@ -32,22 +28,23 @@
     <header>
         <nav class="bg-blue-800 p-4 fixed w-full top-0 z-20 shadow-lg">
             <div class="container mx-auto flex justify-between items-center">
-                <!-- LOGÓ (MÓDOSÍTVA: a főoldalra, index.html-re mutat) -->
-                 <a href="#" class="text-white text-xl font-bold md:text-2xl flex items-center">
+                <!-- LOGÓ -->
+                 <a href="index.html" class="text-white text-xl font-bold md:text-2xl flex items-center">
                     <img 
                         src="tanuszoda.jpeg" 
+                        onerror="this.style.display='none'" 
                         alt="Csíkszentdomokosi Tanuszoda Logó" 
-                        class="h-8 md:h-10 rounded-md"
-						<a href="https://zsozsoo13.github.io/domnus-aqua-weboldal/index.html#nyitvatartas"> <a href>
-                    
-                    <!-- FIGYELEM: Cserélje le a fenti 'src' URL-t a saját logója elérési útjára! -->
+                        class="h-8 md:h-10 rounded-md mr-2"
+                    >
+                    <span class="hidden sm:block">Tanuszoda</span>
                 </a>
+                
                 <!-- Mobilos menü gomb -->
                 <button id="menu-button" class="text-white md:hidden focus:outline-none">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
                 
-                <!-- Asztali menü (MÓDOSÍTVA: linkek az index.html-re mutatnak) -->
+                <!-- Asztali menü -->
                 <div class="hidden md:flex space-x-6 items-center">
                     <a href="index.html#nyitvatartas" class="text-white hover:text-blue-200 transition duration-300 font-semibold lang-hu">Nyitvatartás</a>
                     <a href="index.html#nyitvatartas" class="text-white hover:text-blue-200 transition duration-300 font-semibold lang-ro hidden">Program</a>
@@ -58,14 +55,13 @@
                     <a href="index.html#rolunk" class="text-white hover:text-blue-200 transition duration-300 font-semibold lang-hu">Szolgáltatások</a>
                     <a href="index.html#rolunk" class="text-white hover:text-blue-200 transition duration-300 font-semibold lang-ro hidden">Servicii</a>
 
-                    <!-- MÓDOSÍTVA: Ez az aktív oldal, ezért nem link (vagy href="#") -->
                     <a href="#" class="text-blue-200 transition duration-300 font-bold lang-hu">Galéria</a>
                     <a href="#" class="text-blue-200 transition duration-300 font-bold lang-ro hidden">Galerie</a>
 
                     <a href="index.html#kapcsolat" class="text-white hover:text-blue-200 transition duration-300 font-semibold lang-hu">Kapcsolat</a>
                     <a href="index.html#kapcsolat" class="text-white hover:text-blue-200 transition duration-300 font-semibold lang-ro hidden">Contact</a>
 
-                    <select id="language-switcher" class="bg-blue-700 text-white rounded-md p-1 focus:ring-2 focus:ring-white">
+                    <select id="language-switcher" class="bg-blue-700 text-white rounded-md p-1 focus:ring-2 focus:ring-white cursor-pointer">
                         <option value="hu">HU</option>
                         <option value="ro">RO</option>
                     </select>
@@ -73,7 +69,7 @@
             </div>
         </nav>
         
-        <!-- Mobilos menü (kinyíló) (MÓDOSÍTVA: linkek az index.html-re mutatnak) -->
+        <!-- Mobilos menü (kinyíló) -->
         <div id="mobile-menu" class="hidden fixed top-16 left-0 w-full bg-blue-700 z-10 shadow-lg md:hidden">
             <div class="flex flex-col space-y-2 p-4">
                 <a href="index.html#nyitvatartas" class="text-white hover:bg-blue-600 p-2 rounded-md lang-hu">Nyitvatartás</a>
@@ -85,7 +81,6 @@
                 <a href="index.html#rolunk" class="text-white hover:bg-blue-600 p-2 rounded-md lang-hu">Szolgáltatások</a>
                 <a href="index.html#rolunk" class="text-white hover:bg-blue-600 p-2 rounded-md lang-ro hidden">Servicii</a>
 
-                <!-- MÓDOSÍTVA: Ez az aktív oldal -->
                 <a href="#" class="text-blue-200 bg-blue-600 p-2 rounded-md font-bold lang-hu">Galéria</a>
                 <a href="#" class="text-blue-200 bg-blue-600 p-2 rounded-md font-bold lang-ro hidden">Galerie</a>
 
@@ -101,36 +96,54 @@
     </header>
 
     <main>
-        
-        <!-- EZ AZ EGY SZEKCIÓ VAN EZEN AZ OLDALON -->
-        <section id="galeria" class="py-16 md:py-24 bg-gray-900 text-white">
+        <section id="galeria" class="py-16 md:py-24 bg-gray-900 text-white min-h-screen">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold mb-12">
                     <span class="lang-hu">Galéria</span>
                     <span class="lang-ro hidden">Galerie</span>
                 </h2>
+                
+                <p class="mb-8 text-gray-400 text-sm">
+                    <span class="lang-hu">Kattints a képekre a nagyításhoz!</span>
+                    <span class="lang-ro hidden">Click pe imagini pentru a mări!</span>
+                </p>
+
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                    <!-- FIGYELEM: Cserélje le a placehold.co linkeket a saját képeinek URL-jére! -->
-					<div class="rounded-lg overflow-hidden shadow-lg"><img src="Tanuszoda.jpg" alt="Uszoda 8" class="w-full h-auto hover:scale-105 transition-transform duration-300"></div>
-                    <div class="rounded-lg overflow-hidden shadow-lg"><img src="Medenceter.jpg" alt="Uszoda 1" class="w-full h-auto hover:scale-105 transition-transform duration-300"></div>
-                    <div class="rounded-lg overflow-hidden shadow-lg"><img src="Medenceter1.jpg" alt="Uszoda 2" class="w-full h-auto hover:scale-105 transition-transform duration-300"></div>
-                    <div class="rounded-lg overflow-hidden shadow-lg"><img src="minibararak.jpeg" alt="Uszoda 3" class="w-full h-auto hover:scale-105 transition-transform duration-300"></div>
+                    <!-- A képekhez hozzáadtam az 'onclick' eseményt és a 'cursor-pointer' osztályt -->
+                    <div class="rounded-lg overflow-hidden shadow-lg group">
+                        <img src="Tanuszoda.jpg" onclick="openModal(this.src)" alt="Uszoda 8" class="w-full h-64 object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
+                    </div>
+                    <div class="rounded-lg overflow-hidden shadow-lg group">
+                        <img src="Medenceter.jpg" onclick="openModal(this.src)" alt="Uszoda 1" class="w-full h-64 object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
+                    </div>
+                    <div class="rounded-lg overflow-hidden shadow-lg group">
+                        <img src="Medenceter1.jpg" onclick="openModal(this.src)" alt="Uszoda 2" class="w-full h-64 object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
+                    </div>
+                    <div class="rounded-lg overflow-hidden shadow-lg group">
+                        <img src="minibararak.jpeg" onclick="openModal(this.src)" alt="Uszoda 3" class="w-full h-64 object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
+                    </div>
                     
-                    <div class="rounded-lg overflow-hidden shadow-lg"><img src="Masszazs.jpg" alt="Uszoda 6" class="w-full h-auto hover:scale-105 transition-transform duration-300"></div>
-                    <div class="rounded-lg overflow-hidden shadow-lg"><img src="Oltozok.jpg" alt="Uszoda 7" class="w-full h-auto hover:scale-105 transition-transform duration-300"></div>
-                    <div class="rounded-lg overflow-hidden shadow-lg"><img src="Recepcio.jpg" alt="Uszoda 8" class="w-full h-auto hover:scale-105 transition-transform duration-300"></div>
-					
-					<div class="rounded-lg overflow-hidden shadow-lg"><img src="Szauna1.jpg" alt="Uszoda 4" class="w-full h-auto hover:scale-105 transition-transform duration-300"></div>
-                    <div class="rounded-lg overflow-hidden shadow-lg"><img src="Szauna2.jpg" alt="Uszoda 5" class="w-full h-auto hover:scale-105 transition-transform duration-300"></div>
+                    <div class="rounded-lg overflow-hidden shadow-lg group">
+                        <img src="Masszazs.jpg" onclick="openModal(this.src)" alt="Uszoda 6" class="w-full h-64 object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
+                    </div>
+                    <div class="rounded-lg overflow-hidden shadow-lg group">
+                        <img src="Oltozok.jpg" onclick="openModal(this.src)" alt="Uszoda 7" class="w-full h-64 object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
+                    </div>
+                    <div class="rounded-lg overflow-hidden shadow-lg group">
+                        <img src="Recepcio.jpg" onclick="openModal(this.src)" alt="Uszoda 8" class="w-full h-64 object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
+                    </div>
+                    
+                    <div class="rounded-lg overflow-hidden shadow-lg group">
+                        <img src="Szauna1.jpg" onclick="openModal(this.src)" alt="Uszoda 4" class="w-full h-64 object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
+                    </div>
+                    <div class="rounded-lg overflow-hidden shadow-lg group">
+                        <img src="Szauna2.jpg" onclick="openModal(this.src)" alt="Uszoda 5" class="w-full h-64 object-cover hover:scale-110 transition-transform duration-500 cursor-pointer">
+                    </div>
                 </div>
             </div>
         </section>
-
-        <!-- A TÖBBI SZEKCIÓ (Hero, Nyitvatartás, Rolunk, Árak, Kapcsolat) TÖRÖLVE INNEN -->
-
     </main>
 
-    <!-- 7. Footer (ugyanaz, mint a főoldalon) -->
     <footer class="bg-gray-800 text-white p-6 text-center">
         <div class="container mx-auto">
             <p class="text-sm">&copy; 2025 Minden jog fenntartva. Csíkszentdomokosi Tanuszoda.</p>
@@ -140,7 +153,39 @@
         </div>
     </footer>
 
+    <!-- LIGHTBOX / MODÁLIS ABLAK (Alapból rejtett) -->
+    <div id="image-modal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-95 flex items-center justify-center p-4" onclick="closeModal()">
+        <!-- Bezárás gomb -->
+        <button class="absolute top-4 right-4 text-white text-5xl hover:text-gray-300 focus:outline-none" onclick="closeModal()">&times;</button>
+        
+        <!-- A nagy kép -->
+        <img id="modal-img" src="" alt="Nagyított kép" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl object-contain">
+        
+        <!-- Kis segítség -->
+        <p class="absolute bottom-4 text-gray-400 text-sm">Kattints bárhova a bezáráshoz</p>
+    </div>
+
     <script>
+        // --- Lightbox logika START ---
+        const modal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-img');
+
+        // Kép megnyitása
+        function openModal(src) {
+            modal.classList.remove('hidden'); // Megjelenítés
+            modalImg.src = src; // Kép betöltése
+            document.body.style.overflow = 'hidden'; // Görgetés tiltása a háttérben
+        }
+
+        // Kép bezárása
+        function closeModal() {
+            modal.classList.add('hidden'); // Elrejtés
+            modalImg.src = ''; // Kép törlése (hogy ne villanjon be a következőnél)
+            document.body.style.overflow = 'auto'; // Görgetés engedélyezése
+        }
+        // --- Lightbox logika END ---
+
+
         // Nyelvváltó logika
         const langSwitcher = document.getElementById('language-switcher');
         const mobileLangSwitcher = document.getElementById('mobile-language-switcher');
@@ -148,35 +193,27 @@
         const mobileMenu = document.getElementById('mobile-menu');
 
         function setLanguage(lang) {
-            // Elrejti az összes nyelvi elemet
             document.querySelectorAll('[class*="lang-"]').forEach(el => {
                 el.classList.add('hidden');
             });
-            // Megjeleníti a kiválasztott nyelv elemeit
             document.querySelectorAll(`.lang-${lang}`).forEach(el => {
                 el.classList.remove('hidden');
             });
-            // Szinkronizálja a két választót
             langSwitcher.value = lang;
             mobileLangSwitcher.value = lang;
-            // Elmenti a választást
             localStorage.setItem('websiteLang', lang);
         }
 
-        // Kezdeti nyelv beállítása (mentésből vagy alapértelmezett)
         let currentLang = localStorage.getItem('websiteLang') || 'hu';
         setLanguage(currentLang);
 
-        // Nyelvváltás eseménykezelője
         langSwitcher.addEventListener('change', (e) => setLanguage(e.target.value));
         mobileLangSwitcher.addEventListener('change', (e) => setLanguage(e.target.value));
         
-        // Mobilos menü váltása
         menuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Menü elrejtése navigáció után mobilon
         document.querySelectorAll('#mobile-menu a').forEach(item => {
             item.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
