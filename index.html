@@ -602,46 +602,48 @@
     </footer>
 
     <script>
-        // Nyelvváltó logika
-        const langSwitcher = document.getElementById('language-switcher');
-        const mobileLangSwitcher = document.getElementById('mobile-language-switcher');
         const menuButton = document.getElementById('menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
 
-        function setLanguage(lang) {
-            // Elrejti az összes nyelvi elemet
-            document.querySelectorAll('[class*="lang-"]').forEach(el => {
-                el.classList.add('hidden');
-            });
-            // Megjeleníti a kiválasztott nyelv elemeit
-            document.querySelectorAll(`.lang-${lang}`).forEach(el => {
-                el.classList.remove('hidden');
-            });
-            // Szinkronizálja a két választót
-            langSwitcher.value = lang;
-            mobileLangSwitcher.value = lang;
-            // Elmenti a választást
-            localStorage.setItem('websiteLang', lang);
-        }
-
-        // Kezdeti nyelv beállítása (mentésből vagy alapértelmezett)
-        let currentLang = localStorage.getItem('websiteLang') || 'hu';
-        setLanguage(currentLang);
-
-        // Nyelvváltás eseménykezelője
-        langSwitcher.addEventListener('change', (e) => setLanguage(e.target.value));
-        mobileLangSwitcher.addEventListener('change', (e) => setLanguage(e.target.value));
-        
-        // Mobilos menü váltása
         menuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Menü elrejtése navigáció után mobilon
-        document.querySelectorAll('#mobile-menu a').forEach(item => {
-            item.addEventListener('click', () => {
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
+        });
+
+        const langSwitchers = [
+            document.getElementById('language-switcher'),
+            document.getElementById('mobile-language-switcher')
+        ];
+
+        function switchLanguage(lang) {
+            const huElements = document.querySelectorAll('.lang-hu');
+            const roElements = document.querySelectorAll('.lang-ro');
+
+            if (lang === 'hu') {
+                huElements.forEach(el => el.classList.remove('hidden'));
+                roElements.forEach(el => el.classList.add('hidden'));
+            } else {
+                huElements.forEach(el => el.classList.add('hidden'));
+                roElements.forEach(el => el.classList.remove('hidden'));
+            }
+
+            langSwitchers.forEach(select => {
+                if(select) select.value = lang;
+            });
+        }
+
+        langSwitchers.forEach(select => {
+            if(select) {
+                select.addEventListener('change', (e) => {
+                    switchLanguage(e.target.value);
+                });
+            }
         });
     </script>
 </body>
